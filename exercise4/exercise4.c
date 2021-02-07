@@ -39,8 +39,37 @@ void exercise4_day_calc(){
     printf("%i", weekday);
 }
 
-void exercise4_binarysum(){
-    unsigned  char mychar = 3;
-    printf("%c", &mychar );
+void exercise4_binarysum(unsigned  char summ1, unsigned char summ2){
+    int overflow = 0;
+    unsigned int sum = 0;
+    for (int i = 0; i < 8; ++i) {
+        int current = (summ1 >> i & 1) & (summ2 >> i & 1);
+        //printf("Current: %i", current);
+        if( (current == 1 && overflow == 1)){
+            sum = overflow << i;
+            overflow = 1;
+        }
+        else if(current == 1 && overflow == 0){
+            sum = overflow << i;
+            overflow = 1;
+        }
+        else if(current == 0 && overflow == 1){
+            sum = overflow << i;
+            overflow = 0;
+        }
+        else if(current == 0 && overflow == 0){
+            int adder = (summ1 >> i & 1) | (summ2 >> i & 1);
+            sum = sum | adder << i;
+            overflow = 0;
+        }
+
+    }
+    printf("Summary is: %i", sum);
+}
+
+void exercise4_callbinarysumm(){
+    unsigned  char summ1 = 0b00000100; // 0b 0011 1100
+    unsigned char summ2 = 0b00000001; // 0b 0000 0001 -> 0b 0000 0010
+    exercise4_binarysum(summ1, summ2);
 }
 

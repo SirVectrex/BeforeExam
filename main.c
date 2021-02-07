@@ -5,6 +5,6 @@
 
 int main() {
     printf("Hello, World!\n");
-    exercise4_binarysum();
+    exercise4_callbinarysumm();
     return 0;
 }
