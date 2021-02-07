@@ -87,3 +87,56 @@ void testexam_fields_and_strings_arrayversion_start(){
     testexam_fiels_and_strings_arrayversion(txt_to_change);
     printf("\nNew orig dest: %s", txt_to_change);
 }
+
+struct  MotorData_t{
+    unsigned FahrGestNr;
+    short Hubraum;
+    short Leistung;
+    unsigned Kilometer;
+    char Zylinder;
+};
+
+struct ExterieurData_t{
+    unsigned FahrGestNr;
+    unsigned Farbe;
+    unsigned AnzTueren;
+    unsigned Laenge;
+    // will miss out on rest as not needed
+};
+
+// will only init field of 100 (nobody got time and ram for more)
+struct MotorData_t Motordata[100] = {NULL};
+struct ExterieurData_t ExterieurData[100] = {NULL};
+
+struct pricetag{
+    int Hubraum;
+    int Kilometerstand;
+    int Leistung;
+    int FarbID;
+    short Tueren;
+
+};
+
+struct pricetag testexam_datastructs(int FGNR){
+    static struct pricetag mypricetag;
+    int motorindex = -1, extindex = -1;
+    for (int i = 0; i < 100; ++i) {
+        if(Motordata[i].FahrGestNr == FGNR){
+            motorindex == i;
+        }
+        if (ExterieurData[i].FahrGestNr == FGNR){
+            extindex = i;
+        }
+        if (extindex != -1 && motorindex != -1){
+            break;
+        }
+    }
+    mypricetag.FarbID = ExterieurData[extindex].Farbe;
+    mypricetag.Hubraum = Motordata[motorindex].Hubraum;
+    mypricetag.Kilometerstand = Motordata[motorindex].Kilometer;
+    mypricetag.Leistung = Motordata[motorindex].Leistung;
+    mypricetag.Tueren = ExterieurData[extindex].AnzTueren;
+
+    return mypricetag;
+
+}
