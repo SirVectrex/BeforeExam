@@ -140,3 +140,45 @@ struct pricetag testexam_datastructs(int FGNR){
     return mypricetag;
 
 }
+
+
+// Aufgabe 4 will be splitted into Recursion and Prcessing through iteration
+int testexam_rekursion(int i){
+    if( i = 1){
+        return 0;
+    }
+    else{
+        return (i^2 -1) + testexam_rekursion(i-1);
+    }
+}
+
+void testexam_rekursion_starter(){
+    printf("%i", testexam_rekursion(5));
+}
+
+void testexam_iterative(int input){
+    int output = 0;
+    for (int i = 1; i <= input; ++i) {
+        output = output + (i^2 -1);
+    }
+}
+/*
+ * Theorie Questions: Iterativ braucht weniger Speicher, da nur ein Function Frame
+ * Rekursion ist nicht immer schneller. Bsp. Minimalfunktion auf Iterativer Basis
+ *
+ *
+ *
+ * Aufgabe 5:
+ *
+ *  a) endliche Abfolge von Anweisungen
+ *  b) Die Funktionsdeklaration gibt den "Prototyp" der Funktionan, inkl Parameter und Rückgabe.
+ *  Die Definition umfasst den tatsächlichen Code und Var-Namen
+ *  c) int * definiert einen pointer zur variable var1, int b deklariert eine neue variable mit gleichem Wert
+ *  d) Variablen sind nachträglich nicht veränderbar
+ *  e) Überprüfen der Gültigkeit der Initialisierung
+ *  f) Post und Prä-Inkrement
+ *  g) Definition eines neuen Datentypes -> Verwendung zur Cross-Platform usage
+ *  h) Aufzählungstyp für zB Monate
+ *  i) break; beendet eine schleife, continue; überspringt die aktuelle iteration
+ *  j) das verhindern von Endlosschleifen
+ */
