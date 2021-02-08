@@ -17,19 +17,19 @@ void testexam_bitoperators(){
             Reg_SSEG = Reg_SSEG & ~0b0000000000000001;// ausschalten
             Reg_SSEG = 0b1101101000000000; // 1101 1010 0000 0000
             // change to 5 ( turn on 4,5,7,2,1) -> turn bit 15, 14, 12, 11, 9 to '1' -> 0b 1101 1010 0000 0000
-            Reg_SSEG = Reg_SSEG | ~0b0000000000000001;// anschalten
+            Reg_SSEG = Reg_SSEG | 0b0000000000000001;// anschalten
         }
         case 6:{
             Reg_SSEG = Reg_SSEG & ~0b0000000000000001;// ausschalten
             Reg_SSEG = 0b1101111000000000; // 1101 1010 0000 0000
             // change to 6 ( turn on 4,5,6,7,2,1) -> turn bit 15, 14,13, 12, 11, 9 to '1' -> 0b 1101 1110 0000 0000
-            Reg_SSEG = Reg_SSEG | ~0b0000000000000001;// anschalten
+            Reg_SSEG = Reg_SSEG | 0b0000000000000001;// anschalten
         }
         case 7:{
             Reg_SSEG = Reg_SSEG & ~0b0000000000000001;// ausschalten
             Reg_SSEG = 0b0111000000000000; // 1101 1010 0000 0000
             // change to 7 ( turn on 4,3,2) -> turn bit 14, 13, 12 to '1' -> 0b 0111 0000 0000 0000
-            Reg_SSEG = Reg_SSEG | ~0b0000000000000001;// anschalten
+            Reg_SSEG = Reg_SSEG | 0b0000000000000001;// anschalten
         }
         default:{
             printf("Please enter a valid number");

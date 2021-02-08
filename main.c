@@ -4,11 +4,12 @@
 #include "exercise4/exercise4.h"
 #include "Structs/mainstruct.h"
 #include "Beispielklausur/testexam.h"
+#include "exercise6.h"
 
 
 int main() {
     setbuf(stdin, 0);
     printf("Hello, World!\n");
-    testexam_fields_and_strings_arrayversion_start();
+    exercise6_armstrong();
     return 0;
 }
