@@ -4,12 +4,13 @@
 #include "exercise4/exercise4.h"
 #include "Structs/mainstruct.h"
 #include "Beispielklausur/testexam.h"
-#include "exercise6.h"
-
+#include "Exercise6/exercise6.h"
+#include "exercise7/exercise7.h"
 
 int main() {
     setbuf(stdin, 0);
     printf("Hello, World!\n");
-    exercise6_armstrong();
+
+    exercise7_start();
     return 0;
 }

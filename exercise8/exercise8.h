@@ -1,0 +1,8 @@
+//
+// Created by flori on 08.02.2021.
+//
+
+#ifndef BEFOREEXAM_EXERCISE8_H
+#define BEFOREEXAM_EXERCISE8_H
+
+#endif //BEFOREEXAM_EXERCISE8_H
